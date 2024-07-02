@@ -20,6 +20,7 @@ public class AzureBlobStorageConfig {
 
     @Bean
     public BlobServiceClient getBlobServiceClient() {
+
         return new BlobServiceClientBuilder()
                 .endpoint(String.format(Locale.ROOT, "https://%s.blob.core.windows.net", accountName))
                 .credential(new StorageSharedKeyCredential(accountName, accountKey))
